@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 260">
+<style>text{font-family:"WenQuanYi Zen Hei","DejaVu Sans",sans-serif}</style>
+<defs><marker id="a" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,6 2.5,0 5" fill="#555"/></marker></defs>
+
+<rect x="15" y="10" width="140" height="34" rx="5" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/><text x="85" y="26" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565c0">search.proto</text><text x="85" y="40" text-anchor="middle" font-size="7" fill="#555">service+message</text>
+<line x1="155" y1="27" x2="190" y2="27" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<rect x="195" y="10" width="160" height="34" rx="5" fill="#ede7f6" stroke="#4527a0" stroke-width="1.5"/><text x="275" y="26" text-anchor="middle" font-size="10" font-weight="bold" fill="#4527a0">ProtoUtils::Parse()</text><text x="275" y="40" text-anchor="middle" font-size="7" fill="#555">protobuf编译→语法树</text>
+<line x1="355" y1="27" x2="390" y2="27" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<rect x="395" y="10" width="160" height="34" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/><text x="475" y="26" text-anchor="middle" font-size="10" font-weight="bold" fill="#2e7d32">SyntaxTree(IR)</text><text x="475" y="40" text-anchor="middle" font-size="7" fill="#555">services·messages</text>
+<line x1="475" y1="44" x2="475" y2="74" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<rect x="180" y="78" width="190" height="30" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="1.2"/><text x="275" y="98" text-anchor="middle" font-size="9" font-weight="bold" fill="#e65100">NameRender(命名引擎)</text>
+<line x1="275" y1="108" x2="275" y2="138" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<rect x="130" y="142" width="290" height="30" rx="5" fill="#e8eaf6" stroke="#283593" stroke-width="1.2"/><text x="275" y="162" text-anchor="middle" font-size="9" font-weight="bold" fill="#283593">ServerCodeRender(模板渲染)</text>
+<line x1="275" y1="172" x2="275" y2="192" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<rect x="15" y="197" width="590" height="55" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+<text x="310" y="217" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">输出:7个.h/.cpp+1个Makefile→写入磁盘</text>
+<text x="310" y="237" text-anchor="middle" font-size="8" fill="#555">svrconfig·servermain·service·service_impl(用户编辑)·client·client_uthread·tool·Makefile</text>
+
+</svg>

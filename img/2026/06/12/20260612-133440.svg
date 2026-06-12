@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 280">
+<style>text{font-family:"WenQuanYi Zen Hei","DejaVu Sans",sans-serif}</style>
+<defs><marker id="a" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,6 2.5,0 5" fill="#555"/></marker></defs>
+
+<rect x="15" y="10" width="115" height="26" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/><text x="72" y="28" text-anchor="middle" font-size="9" fill="#1565c0">TCP字节流</text>
+<line x1="130" y1="23" x2="165" y2="23" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<rect x="170" y="10" width="125" height="26" rx="4" fill="#e8eaf6" stroke="#283593" stroke-width="1"/><text x="232" y="28" text-anchor="middle" font-size="9" fill="#283593">RecvStartLine</text>
+<line x1="295" y1="23" x2="330" y2="23" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<rect x="335" y="10" width="115" height="26" rx="4" fill="#e8eaf6" stroke="#283593" stroke-width="1"/><text x="392" y="28" text-anchor="middle" font-size="9" fill="#283593">RecvHeaders</text>
+<line x1="450" y1="23" x2="485" y2="23" stroke="#555" stroke-width="1" marker-end="url(#a)"/>
+<polygon points="530,12 585,36 530,60 475,36" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/><text x="530" y="36" text-anchor="middle" font-size="7" fill="#e65100">Body?</text>
+<line x1="585" y1="36" x2="608" y2="36" stroke="#888" stroke-width="0.8"/><text x="608" y="33" font-size="7" fill="#888">无</text>
+<rect x="15" y="75" width="590" height="195" rx="6" fill="#fafafa" stroke="#ddd" stroke-width="0.8"/>
+<text x="310" y="93" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">RecvBody() — 三种读取模式</text>
+<rect x="35" y="108" width="170" height="50" rx="4" fill="#e8f5e9" stroke="#2e7d32" stroke-width="0.8"/><text x="120" y="126" text-anchor="middle" font-size="9" font-weight="bold" fill="#2e7d32">模式A:Chunked</text><text x="120" y="142" text-anchor="middle" font-size="7" fill="#555">Transfer-Encoding:chunked</text><text x="120" y="154" text-anchor="middle" font-size="6" fill="#888">hex_size data...0</text>
+<rect x="220" y="108" width="170" height="50" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="0.8"/><text x="305" y="126" text-anchor="middle" font-size="9" font-weight="bold" fill="#e65100">模式B:Content-Length</text><text x="305" y="142" text-anchor="middle" font-size="7" fill="#555">Content-Length:N</text><text x="305" y="154" text-anchor="middle" font-size="6" fill="#888">固定读取N字节</text>
+<rect x="405" y="108" width="175" height="50" rx="4" fill="#ede7f6" stroke="#4527a0" stroke-width="0.8"/><text x="492" y="126" text-anchor="middle" font-size="9" font-weight="bold" fill="#4527a0">模式C:Close</text><text x="492" y="142" text-anchor="middle" font-size="7" fill="#555">无Content-Length</text><text x="492" y="154" text-anchor="middle" font-size="6" fill="#888">读到连接关闭</text>
+<rect x="35" y="170" width="545" height="35" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="0.5"/><text x="307" y="186" text-anchor="middle" font-size="7" fill="#1565c0">SeparateStr():原地切割,零malloc·getlineWithTrimRight():去\r\n</text><text x="307" y="200" text-anchor="middle" font-size="7" fill="#555">RecvHeaders支持RFC多行折叠(空格/Tab续行合并)</text>
+<rect x="35" y="220" width="545" height="28" rx="4" fill="#f5f5f5" stroke="#ddd" stroke-width="0.5"/><text x="307" y="239" text-anchor="middle" font-size="8" fill="#555">请求:RecvReqStartLine→RecvHeaders→RecvBody·响应:RecvRespStartLine→RecvHeaders→RecvBody</text>
+
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 560">
+  <defs><marker id="ar" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,6 2.5,0 5" fill="#555"/></marker><marker id="arGr" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,6 2.5,0 5" fill="#2e7d32"/></marker></defs>
+  <style>text { font-family: 'WenQuanYi Zen Hei','DejaVu Sans',sans-serif; }</style>
+  <rect x="200" y="10" width="180" height="36" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="290" y="33" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">ConsumeTodoList()</text>
+  <line x1="290" y1="46" x2="290" y2="60" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <polygon points="290,63 450,110 290,157 130,110" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="290" y="104" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565c0">epoll_wait(fd, events, 4ms)</text>
+  <text x="290" y="120" text-anchor="middle" font-size="9" fill="#555">等待任意 socket 就绪</text>
+  <text x="290" y="136" text-anchor="middle" font-size="9" fill="#555">返回 nfds 个就绪 socket</text>
+  <line x1="290" y1="157" x2="290" y2="173" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#arGr)"/>
+  <text x="302" y="169" font-size="9" fill="#2e7d32">nfds&gt;0</text>
+  <rect x="170" y="177" width="240" height="56" rx="6" fill="#ede7f6" stroke="#4527a0" stroke-width="1.5"/>
+  <text x="290" y="198" text-anchor="middle" font-size="10" font-weight="bold" fill="#4527a0">Resume 所有就绪协程</text>
+  <text x="290" y="214" text-anchor="middle" font-size="8" fill="#555">for each ready socket:</text>
+  <text x="290" y="227" text-anchor="middle" font-size="8" fill="#555">socket→waited_events = events[i] · runtime_.Resume(id)</text>
+  <line x1="290" y1="233" x2="290" y2="248" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <rect x="150" y="252" width="280" height="65" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="290" y="272" text-anchor="middle" font-size="10" font-weight="bold" fill="#e65100">服务端回调（三个函数指针）</text>
+  <text x="290" y="288" text-anchor="middle" font-size="8" fill="#555">ActiveSocketFunc() — 从 out_queue 取响应唤醒 IO 协程</text>
+  <text x="290" y="302" text-anchor="middle" font-size="8" fill="#555">HandlerNewRequestFunc() — Worker 检查 in_queue 新请求</text>
+  <text x="290" y="315" text-anchor="middle" font-size="8" fill="#555">HandlerAcceptedFdFunc() — 处理新 accept 的 fd</text>
+  <line x1="290" y1="317" x2="290" y2="332" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <rect x="200" y="336" width="180" height="32" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.2"/>
+  <text x="290" y="357" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">ConsumeTodoList()</text>
+  <line x1="290" y1="368" x2="290" y2="383" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <rect x="190" y="387" width="200" height="34" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="290" y="409" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">DealwithTimeout()</text>
+  <line x1="290" y1="421" x2="290" y2="436" stroke="#555" stroke-width="1.2" marker-end="url(#ar)"/>
+  <polygon points="290,439 400,470 290,501 180,470" fill="#fff3e0" stroke="#e65100" stroke-width="1.2"/>
+  <text x="290" y="467" text-anchor="middle" font-size="9" fill="#e65100">run_forever?</text>
+  <text x="290" y="480" text-anchor="middle" font-size="9" fill="#e65100">or !IsAllDone?</text>
+  <line x1="400" y1="470" x2="460" y2="470" stroke="#2e7d32" stroke-width="1.2"/>
+  <text x="440" y="465" font-size="9" fill="#2e7d32">Yes</text>
+  <line x1="460" y1="470" x2="460" y2="110" stroke="#2e7d32" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arGr)"/>
+  <line x1="290" y1="501" x2="290" y2="518" stroke="#c62828" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="302" y="514" font-size="9" fill="#c62828">No</text>
+  <rect x="225" y="522" width="130" height="26" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="290" y="540" text-anchor="middle" font-size="10" font-weight="bold" fill="#c62828">ResumeAll → Exit</text>
+  <rect x="500" y="160" width="70" height="45" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.5"/>
+  <text x="535" y="176" text-anchor="middle" font-size="7" fill="#888">events[i]</text>
+  <text x="535" y="190" text-anchor="middle" font-size="7" fill="#888">.data.ptr</text>
+  <text x="535" y="202" text-anchor="middle" font-size="6" fill="#aaa">→socket*</text>
+  <rect x="500" y="260" width="70" height="45" rx="3" fill="#f5f5f5" stroke="#ddd" stroke-width="0.5"/>
+  <text x="535" y="276" text-anchor="middle" font-size="7" fill="#888">启动时</text>
+  <text x="535" y="290" text-anchor="middle" font-size="7" fill="#888">SetFunc()</text>
+  <text x="535" y="302" text-anchor="middle" font-size="6" fill="#aaa">注入</text>
+</svg>
